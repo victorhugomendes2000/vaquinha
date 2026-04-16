@@ -23,10 +23,11 @@
   .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:600;color:#fff;line-height:1.25;margin-bottom:.75rem;position:relative;z-index:1;}
   .hero-sub{color:rgba(255,255,255,0.8);font-size:1rem;font-weight:300;line-height:1.6;max-width:500px;margin:0 auto;position:relative;z-index:1;}
 
-  .foto-wrapper{position:relative;z-index:1;width:90px;margin:0 auto 1.2rem;}
-  .foto-perfil{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.5);}
-  .foto-perfil-placeholder{width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,0.2);border:3px dashed rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;}
-  .foto-perfil-placeholder span{font-size:10px;color:rgba(255,255,255,0.6);text-align:center;}
+  /* FOTO PERFIL MAIOR */
+  .foto-wrapper{position:relative;z-index:1;width:130px;margin:0 auto 1.4rem;}
+  .foto-perfil{width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.6);}
+  .foto-perfil-placeholder{width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,0.2);border:4px dashed rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;}
+  .foto-perfil-placeholder span{font-size:11px;color:rgba(255,255,255,0.6);text-align:center;}
 
   .card{background:#fff;border-radius:12px;border:1px solid var(--borda);padding:1.6rem 1.8rem;margin:1.2rem 1rem 0;}
   .sec-title{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--azul);margin-bottom:1.1rem;}
@@ -50,8 +51,9 @@
 
   .video-player iframe{width:100%;height:300px;border:none;border-radius:10px;display:block;}
 
-  .fotos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;}
-  .foto-slot{aspect-ratio:1;border-radius:9px;overflow:hidden;background:var(--cinza-claro);border:1px solid var(--borda);}
+  /* GALERIA 6 FOTOS EM GRID 2 COLUNAS */
+  .fotos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}
+  .foto-slot{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--cinza-claro);border:1px solid var(--borda);}
   .foto-slot img{width:100%;height:100%;object-fit:cover;}
   .foto-slot-vazio{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 
@@ -62,8 +64,9 @@
   .qr-area{background:var(--cinza-claro);border-radius:10px;padding:1rem;display:flex;align-items:center;justify-content:center;min-width:130px;}
   .pix-info{flex:1;min-width:160px;}
   .pix-nome{font-weight:500;font-size:1rem;color:var(--texto);margin-bottom:.2rem;}
+  .pix-banco{font-size:.8rem;color:var(--texto-sec);margin-bottom:.8rem;}
   .pix-label{font-size:.75rem;color:var(--texto-sec);text-transform:uppercase;letter-spacing:.7px;margin-bottom:.3rem;}
-  .pix-chave{font-family:monospace;font-size:.85rem;background:var(--azul-suave);border:1px solid #C5D8EC;border-radius:7px;padding:.5rem .8rem;color:var(--azul);word-break:break-all;margin-bottom:.8rem;}
+  .pix-chave{font-family:monospace;font-size:.8rem;background:var(--azul-suave);border:1px solid #C5D8EC;border-radius:7px;padding:.5rem .8rem;color:var(--azul);word-break:break-all;margin-bottom:.8rem;}
   .btn-copiar{width:100%;background:var(--azul);color:#fff;border:none;border-radius:8px;padding:.65rem;font-size:.9rem;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:background .2s;}
   .btn-copiar:hover{background:var(--azul-claro);}
   .btn-copiar.copiado{background:var(--verde);}
@@ -73,7 +76,7 @@
   @media(max-width:500px){
     .info-grid{grid-template-columns:1fr;}
     .pix-block{flex-direction:column;}
-    .fotos-grid{grid-template-columns:1fr 1fr;}
+    .fotos-grid{grid-template-columns:1fr;}
     .card{margin:1rem .5rem 0;padding:1.3rem 1.2rem;}
   }
 </style>
@@ -92,17 +95,20 @@
 
     // FOTO DE PERFIL — cole o link da imagem do Cloudinary
     // Deixe "" para não mostrar foto
-    fotoPerfil: "https://res.cloudinary.com/dwzaj6jbr/image/upload/q_auto/f_auto/v1776355940/Organos-del-caballo_kfsyef.jpg",
+    fotoPerfil: "",
 
-    // GALERIA — cole até 3 links do Cloudinary (deixe "" para slot vazio)
+    // GALERIA — cole até 6 links do Cloudinary (deixe "" para slot vazio)
     galeria: [
-      "https://res.cloudinary.com/dwzaj6jbr/image/upload/q_auto/f_auto/v1776355940/Organos-del-caballo_kfsyef.jpg",
-      "https://res.cloudinary.com/dwzaj6jbr/image/upload/q_auto/f_auto/v1776355940/Organos-del-caballo_kfsyef.jpg",
-      "https://res.cloudinary.com/dwzaj6jbr/image/upload/q_auto/f_auto/v1776355940/Organos-del-caballo_kfsyef.jpg"
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
 
     // VÍDEO — cole o link do YouTube ou Vimeo (deixe "" para não mostrar)
-    videoUrl: "https://www.youtube.com/watch?v=VL-Z9EoRdag"
+    videoUrl: ""
 
   };
 </script>
@@ -153,7 +159,6 @@
       <div class="info-item"><div class="info-item-label">Doença</div><div class="info-item-val">Ceratocone bilateral</div></div>
       <div class="info-item"><div class="info-item-label">Procedimento</div><div class="info-item-val">Anel de Ferrara</div></div>
       <div class="info-item"><div class="info-item-label">Caráter</div><div class="info-item-val">Urgente e necessário</div></div>
-      <div class="info-item"><div class="info-item-label">Cobertura</div><div class="info-item-val">Não coberto pelo plano</div></div>
     </div>
   </div>
 
@@ -167,7 +172,7 @@
   </div>
 
   <!-- FOTOS -->
-  <div class="card" id="card-fotos">
+  <div class="card">
     <div class="sec-title">
       <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
       Minhas fotos
@@ -190,9 +195,9 @@
       <div class="qr-area"><canvas id="qr-canvas"></canvas></div>
       <div class="pix-info">
         <div class="pix-nome">Victor Hugo Mendes da Vitória</div>
-        <div style="font-size:.8rem;color:var(--texto-sec);margin-bottom:.9rem;">Qualquer valor ajuda. Muito obrigado!</div>
-        <div class="pix-label">Chave Pix (CPF)</div>
-        <div class="pix-chave">072.095.201-80</div>
+        <div class="pix-banco">Banco Inter</div>
+        <div class="pix-label">Chave Pix (aleatória)</div>
+        <div class="pix-chave">0253db95-aa42-4742-8140-d87f72b9c206</div>
         <button class="btn-copiar" id="btn-copiar" onclick="copiarChave()">Copiar chave Pix</button>
       </div>
     </div>
@@ -206,14 +211,14 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-  var PIX_CHAVE = '07209520180';
+  var PIX_CHAVE = '0253db95-aa42-4742-8140-d87f72b9c206';
 
   // ── FOTO PERFIL ──
   var fw = document.getElementById('foto-wrapper');
   if(CONFIG.fotoPerfil) {
     fw.innerHTML = '<img class="foto-perfil" src="' + CONFIG.fotoPerfil + '" alt="Victor Hugo">';
   } else {
-    fw.innerHTML = '<div class="foto-perfil-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>Sua foto aqui</span></div>';
+    fw.innerHTML = '<div class="foto-perfil-placeholder"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>Sua foto aqui</span></div>';
   }
 
   // ── PROGRESSO ──
@@ -244,15 +249,13 @@
 
   // ── GALERIA ──
   var grid = document.getElementById('fotos-grid');
-  var temFoto = false;
   CONFIG.galeria.forEach(function(url) {
     var slot = document.createElement('div');
     slot.className = 'foto-slot';
     if(url) {
-      temFoto = true;
       slot.innerHTML = '<img src="' + url + '" alt="Foto">';
     } else {
-      slot.innerHTML = '<div class="foto-slot-vazio"><svg width="22" height="22" fill="none" stroke="#ddd" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M3 9h18"/></svg></div>';
+      slot.innerHTML = '<div class="foto-slot-vazio"><svg width="28" height="28" fill="none" stroke="#ddd" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M3 9h18"/></svg></div>';
     }
     grid.appendChild(slot);
   });
